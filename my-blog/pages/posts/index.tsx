@@ -1,6 +1,7 @@
-import client from '../../client'
+import {client}  from '../../sanity'
 
-export default function Posts() {
+export default function Posts(posts : any) {
+  console.log("posts =========== ", posts);
   return (
     <>
       Blog Post list
