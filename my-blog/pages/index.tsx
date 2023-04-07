@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '@/styles/Home.module.css'
+
+import Header from '@/components/Header'
+
+import imgMainBlog from '../public/assets/complete-design.jpg'
 
 export default function Home() {
   return (
@@ -11,8 +14,17 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <h3>Next.js 13 Blog Sanity</h3>
+      <Header siteAuthor='Lam Nguyen' siteTitle='Lam Nguyen Blog'/>
+      <main className='flex items-center justify-between px-10 mx-auto space-y-5 bg-gray-300 rounded max-w-7xl sm:p-10'>        
+        <div>
+          <h1 className='max-w-xl font-sans text-5xl'>
+            <span className='font-serif cursor-pointer'>Lam Nguyen</span> blog
+          </h1>
+          <h2>Join in, you might be interested!{" "}</h2>
+        </div>
+        <div className='items-center hidden md:inline-flex'>
+          <Image src={imgMainBlog} alt="" />
+        </div>
       </main>
     </>
   )
