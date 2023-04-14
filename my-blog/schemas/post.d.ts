@@ -17,6 +17,7 @@ export interface PostModel{
     slug:{
         current: string;
     };
-    body: [object];
+    body: [TypedObject];
+    categories: string[];
  }
  

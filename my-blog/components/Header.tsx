@@ -10,17 +10,17 @@ const Header: React.FC<HeaderProps> = ({ siteTitle, siteAuthor }) => {
     <header className="bg-gray-900 text-white">
       <div className="container mx-auto py-4 px-6 flex justify-between items-center">
         <Link href="/">
-          <a className="text-lg font-bold">{siteAuthor}</a>
+          <span className="text-lg font-bold">{siteAuthor}</span>
         </Link>
         <nav className="flex items-center">
           <Link href="/">
-            <a className="px-3 py-2 hover:bg-gray-800 rounded">Home</a>
+            <span className="px-3 py-2 hover:bg-gray-800 rounded">Home</span>
           </Link>
           <Link href="/about">
-            <a className="px-3 py-2 hover:bg-gray-800 rounded">About</a>
+            <span className="px-3 py-2 hover:bg-gray-800 rounded">About</span>
           </Link>
           <Link href="/contact">
-            <a className="px-3 py-2 hover:bg-gray-800 rounded">Contact</a>
+            <span className="px-3 py-2 hover:bg-gray-800 rounded">Contact</span>
           </Link>
         </nav>
       </div>

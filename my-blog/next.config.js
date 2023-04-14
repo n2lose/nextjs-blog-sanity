@@ -6,16 +6,11 @@ const nextConfig = {
 // next.config.js
 module.exports = {
 	images: {
-		// remotePatterns: [
-		//   {
-		// 	protocol: 'https',
-		// 	hostname: 'example.com',
-		// 	port: '',
-		// 	pathname: '/account123/**',
-		//   },
-		// ],
 		remotePatterns: [
-			{ hostname: 'cdn.sanity.io' }
+			{
+			  protocol: 'https',
+			  hostname: 'cdn.sanity.io',
+			},
 		  ],
 	},
 	typescript: {

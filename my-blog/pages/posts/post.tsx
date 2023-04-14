@@ -1,19 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { urlFor } from "@/sanity";
+import { urlFor } from "@/sanity.client";
 import { PostModel } from "@/schemas/post";
 
-
 const Post = (post: PostModel) => {
-    console.log("post ==== ", post);
   return (
-    <Link key={post._id} href={`/post/${post.slug.current}`}>
+    <Link key={post._id} href={`/posts/${post.slug.current}`}>
       <div className="overflow-hidden border rounded-lg cursor-pointer group">
-        <img
+        <Image
           src={urlFor(post.mainImage).url()!}
           alt=" main blog image"
+          width={500}
+          height={300}
           className="object-cover w-full transition-transform duration-200 ease-in-out h-60 group-hover:scale-105"
+          unoptimized 
         />
         <div className="flex justify-between p-5 bg-white">
           <div>
@@ -23,10 +24,13 @@ const Post = (post: PostModel) => {
             </p>
           </div>
         </div>
-        <img
+        <Image
           className="w-12 h-12 rounded-full"
           src={urlFor(post.author.image).url()!}
           alt=""
+          width={100}
+          height={100}
+          unoptimized 
         />
       </div>
     </Link>

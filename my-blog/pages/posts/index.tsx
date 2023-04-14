@@ -1,7 +1,6 @@
 import { PostModel } from '@/schemas/post';
-
-import {client}  from '../../sanity';
 import Post from './post';
+import { getAllPosts } from '@/utils/sanity-utils';
 
 interface PostsProps {
   posts: PostModel[];
@@ -18,19 +17,7 @@ export default function Posts({posts} : PostsProps) {
 }
 
 export async function getStaticProps() {
-  const query = `*[_type == "post"] {
-    _id,
-    title,
-    author-> {
-     name,
-     image
-    },
-    description,
-    mainImage,
-    slug
-  }`;
-  const posts = await client.fetch(query);
-  
+    const posts = await getAllPosts()  
     return {
       props: { posts },
     };
